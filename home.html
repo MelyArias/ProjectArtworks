@@ -6,7 +6,7 @@
       rel="icon"
       href="https://cdn.glitch.com/69dbe021-ee33-4ce0-90b3-3ed7d1f74fb6%2Fgroup.png?v=1620609268377"
     />
-    <title>Login</title>
+    <title>Home</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
@@ -24,17 +24,31 @@
           style="vertical-align:middle"
         />
         ARTWORKS</label
-      ></a
-    >
+      ></a>
+    <div class="w3-right w3-hide-small">
+    <a
+          onclick="signOut()"
+          type="button"
+          id="profile"
+          class="w3-bar-item w3-button"
+          ><img
+            id="image"
+            src="https://cdn.glitch.com/72c813e2-eb30-4787-ab55-6867f4c958c5%2F848043.svg?v=1600485886790"
+            height="60.4"
+            width="70"
+        /></a>
+    </div>
   </div>
-  <div class="container">
-    <h1>
-      TEMPLATES
+   <body>
+  
+    <h1><center>TEMPLATES</center>
     </h1>
 <br>
-
+ 
   <!-- Copy and Paste Me -->
-<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+
+ <!-- Copy and Paste Me -->
+<div class="glitch-embed-wrap" style="height: 420px; width: 50%;">
   <iframe
     src="https://glitch.com/embed/#!/embed/template-art?path=index.html&previewSize=100"
     title="template-art on Glitch"
@@ -42,9 +56,20 @@
     style="height: 100%; width: 100%; border: 0;">
   </iframe>
 </div>
-</div>
-  <body>
   
+<!-- Copy and Paste Me -->
+<div class="glitch-embed-wrap" style="height: 420px; width: 50%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/template-artwork2?path=index.html&previewSize=100"
+    title="template-artwork2 on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+
+    
+
+    </body>
   
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase.js"></script>
@@ -67,11 +92,22 @@
       firebase.analytics();
       const auth = firebase.auth();
       var db = firebase.firestore();
+      
+      function signOut() {
+        firebase
+          .auth()
+          .signOut()
+          .then(function() {
+            window.location.href = "http://project-artworks.glitch.me/";
+          })
+          .catch(function(error) {
+            // An error happened.
+          });
+      }
     </script>
     <script>
    
-    <script type="text/javascript" src="script.js"></script>
-  </body>
+    <script type="text/javascript" src="script.js"></script> 
 </html>
 
 
