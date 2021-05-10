@@ -1,3 +1,78 @@
-<h1>
-  Hi!
-</h1>
+<!--Programmer: Mely Arias. Description: This is the login page-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/69dbe021-ee33-4ce0-90b3-3ed7d1f74fb6%2Fgroup.png?v=1620609268377"
+    />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#" class="w3-bar-item w3-button"
+      ><label id="logo"
+        ><img
+          src="https://cdn.glitch.com/69dbe021-ee33-4ce0-90b3-3ed7d1f74fb6%2Fgroup-5.png?v=1620609531355"
+          style="vertical-align:middle"
+        />
+        ARTWORKS</label
+      ></a
+    >
+  </div>
+  <div class="container">
+    <h1>
+      TEMPLATES
+    </h1>
+<br>
+
+  <!-- Copy and Paste Me -->
+<div class="glitch-embed-wrap" style="height: 420px; width: 100%;">
+  <iframe
+    src="https://glitch.com/embed/#!/embed/template-art?path=index.html&previewSize=100"
+    title="template-art on Glitch"
+    allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+    style="height: 100%; width: 100%; border: 0;">
+  </iframe>
+</div>
+</div>
+  <body>
+  
+  
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+     const firebaseConfig = {
+  apiKey: "AIzaSyCR89sPfbHpDPKCbSlTZYtijkWCmwNlZA8",
+  authDomain: "jktm-ca47d.firebaseapp.com",
+  projectId: "jktm-ca47d",
+  storageBucket: "jktm-ca47d.appspot.com",
+  messagingSenderId: "745028154887",
+  appId: "1:745028154887:web:3d2246b024fa17a4e35ca2"
+};
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const auth = firebase.auth();
+      var db = firebase.firestore();
+    </script>
+    <script>
+   
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
+
+
+
