@@ -1,0 +1,126 @@
+<!--Programmer: Mely Arias. Description: This is the login page-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/69dbe021-ee33-4ce0-90b3-3ed7d1f74fb6%2Fgroup.png?v=1620609268377"
+    />
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <div class="w3-bar w3-white">
+    <a href="#" class="w3-bar-item w3-button"
+      ><label id="logo"
+        ><img
+          src="https://cdn.glitch.com/69dbe021-ee33-4ce0-90b3-3ed7d1f74fb6%2Fgroup-5.png?v=1620609531355"
+          style="vertical-align:middle"
+        />
+        ARTWORKS</label
+      ></a
+    >
+  </div>
+  <body>
+  
+    <div class="container">
+      <div class="img">
+        <img
+          src="https://cdn.glitch.com/69dbe021-ee33-4ce0-90b3-3ed7d1f74fb6%2Fundraw_swipe_profiles1_i6mr.png?v=1620609051901"
+        />
+      </div>
+      <div class="login-content">
+       <form action="index.html">
+          <img
+            src="https://cdn.glitch.com/72c813e2-eb30-4787-ab55-6867f4c958c5%2FDrew%20University%20logo.png?v=1601403695618"
+          />
+          <h2 class="title">Welcome</h2>
+          
+          <input
+            onclick="GoogleSignIn()"
+            type="button" class="btn"
+            value="Google Sign in"
+          />
+        </form>
+      </div>
+    </div>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+    
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+     const firebaseConfig = {
+  apiKey: "AIzaSyCR89sPfbHpDPKCbSlTZYtijkWCmwNlZA8",
+  authDomain: "jktm-ca47d.firebaseapp.com",
+  projectId: "jktm-ca47d",
+  storageBucket: "jktm-ca47d.appspot.com",
+  messagingSenderId: "745028154887",
+  appId: "1:745028154887:web:3d2246b024fa17a4e35ca2"
+};
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const auth = firebase.auth();
+      var db = firebase.firestore();
+    </script>
+    <script>
+      function GoogleSignIn() {
+        var provider = new firebase.auth.GoogleAuthProvider();
+
+        firebase
+          .auth()
+          .signInWithPopup(provider)
+          .then(function(result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+          
+          })
+          .catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+          });
+        return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
+        return firebase.auth().currentUser.displayName;
+      }
+      
+
+      auth.onAuthStateChanged(function(user) {
+        if (user) {
+          //Take user to a different or home
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    window.location.href = "http://login-pge.glitch.me/1.html";
+ };
+})
+        
+      
+    </script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
+
+
+
