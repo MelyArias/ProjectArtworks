@@ -1,22 +1,5 @@
-const inputs = document.querySelectorAll(".input");
+/* If you're feeling fancy you can add interactivity 
+    to your site with Javascript */
 
-
-function addcl(){
-	let parent = this.parentNode.parentNode;
-	parent.classList.add("focus");
-}
-
-function remcl(){
-	let parent = this.parentNode.parentNode;
-	if(this.value == ""){
-		parent.classList.remove("focus");
-	}
-}
-
-
-inputs.forEach(input => {
-	input.addEventListener("focus", addcl);
-	input.addEventListener("blur", remcl);
-});
-
-
+// prints a message in the browser's dev tools console
+console.log("Hello 🌎");
